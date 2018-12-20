@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static online.pubudu.springstarter.util.Constants.*;
+import static online.pubudu.springstarter.util.Constants.EXCEPTION_JWT_INVALID;
 
 /**
  * Created by pubudu welagedara on 12/17/18.
