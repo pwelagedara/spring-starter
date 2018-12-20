@@ -1,4 +1,4 @@
-package online.pubudu.springstarter.security;
+package online.pubudu.springstarter.security.jwt;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,11 +16,11 @@ import java.util.Optional;
 /**
  * Created by pubudu welagedara on 12/17/18.
  */
-public class ApiKeyAuthenticationFilter extends GenericFilterBean {
+public class JwtAuthenticationFilter extends GenericFilterBean {
 
     private AuthenticationManager authenticationManager;
 
-    public ApiKeyAuthenticationFilter(AuthenticationManager authenticationManager) {
+    public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
 
@@ -30,11 +30,12 @@ public class ApiKeyAuthenticationFilter extends GenericFilterBean {
         HttpServletRequest httpServletRequest = (HttpServletRequest)servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse)servletResponse;
 
-        Optional<String> apiKey = Optional.ofNullable(httpServletRequest.getHeader("X-Api-Key"));
+        Optional<String> requestHeader = Optional.ofNullable(httpServletRequest.getHeader("X-Authorization"));
 
-        if(apiKey.isPresent()) {
-            ApiKeyAuthenticationToken apiKeyAuthenticationToken = new ApiKeyAuthenticationToken(apiKey.get());
-            SecurityContextHolder.getContext().setAuthentication(authenticationManager.authenticate(apiKeyAuthenticationToken));
+        if(requestHeader.isPresent() && requestHeader.get().startsWith("Bearer ")) {
+
+            JwtAuthenticationToken jwtAuthenticationToken = new JwtAuthenticationToken(requestHeader.get().substring(7));
+            SecurityContextHolder.getContext().setAuthentication(authenticationManager.authenticate(jwtAuthenticationToken));
         }
         filterChain.doFilter(httpServletRequest, httpServletResponse);
     }

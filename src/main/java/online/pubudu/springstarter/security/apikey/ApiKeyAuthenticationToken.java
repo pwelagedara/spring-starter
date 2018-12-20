@@ -1,4 +1,4 @@
-package online.pubudu.springstarter.security;
+package online.pubudu.springstarter.security.apikey;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -22,6 +22,6 @@ public class ApiKeyAuthenticationToken extends AbstractAuthenticationToken {
 
     @Override
     public Object getPrincipal() {
-        return "admin";
+        return null;
     }
 }

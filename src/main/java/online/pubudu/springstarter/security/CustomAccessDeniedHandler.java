@@ -2,8 +2,6 @@ package online.pubudu.springstarter.security;
 
 import online.pubudu.springstarter.dto.ErrorDto;
 import online.pubudu.springstarter.util.FilterUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.AccessDeniedException;
@@ -16,12 +14,8 @@ import java.io.IOException;
 
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
-    private static final Log LOG = LogFactory.getLog(CustomAccessDeniedHandler.class);
-
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
-
-        LOG.info("Responding with a 403");
 
         // Respond with status 403
         HttpStatus httpStatus = HttpStatus.FORBIDDEN;

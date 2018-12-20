@@ -1,9 +1,11 @@
 package online.pubudu.springstarter.config;
 
-import online.pubudu.springstarter.security.ApiKeyAuthenticationFilter;
-import online.pubudu.springstarter.security.ApiKeyAuthenticationProvider;
 import online.pubudu.springstarter.security.CustomAccessDeniedHandler;
 import online.pubudu.springstarter.security.CustomAuthenticationEntrypoint;
+import online.pubudu.springstarter.security.apikey.ApiKeyAuthenticationFilter;
+import online.pubudu.springstarter.security.apikey.ApiKeyAuthenticationProvider;
+import online.pubudu.springstarter.security.jwt.JwtAuthenticationFilter;
+import online.pubudu.springstarter.security.jwt.JwtAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -22,6 +24,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private ApiKeyAuthenticationProvider apiKeyAuthenticationProvider;
+
+    @Autowired
+    private JwtAuthenticationProvider jwtAuthenticationProvider;
 
     @Autowired
     private CustomAuthenticationEntrypoint customAuthenticationEntrypoint;
@@ -48,10 +53,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 anyRequest().authenticated().
                 and().
                 addFilterBefore(new ApiKeyAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
+
+        http.
+                antMatcher("/protected/jwt/**").
+                authorizeRequests().
+                anyRequest().authenticated().
+                and().
+                addFilterBefore(new JwtAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(apiKeyAuthenticationProvider);
+        auth.authenticationProvider(apiKeyAuthenticationProvider)
+                .authenticationProvider(jwtAuthenticationProvider);
     }
 }

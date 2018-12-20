@@ -1,9 +1,8 @@
 package online.pubudu.springstarter.exception;
 
+import io.jsonwebtoken.JwtException;
 import online.pubudu.springstarter.dto.ErrorDto;
 import online.pubudu.springstarter.util.FilterUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -17,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static online.pubudu.springstarter.util.Constants.*;
+
 /**
  * Created by pubudu welagedara on 12/17/18.
  */
@@ -24,35 +25,34 @@ import java.io.IOException;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class GlobalFilterExceptionHandler extends OncePerRequestFilter {
 
-    private static final Log LOG = LogFactory.getLog(GlobalFilterExceptionHandler.class);
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        LOG.info("In GlobalFilterExceptionHandler...");
         try {
             filterChain.doFilter(request, response);
         } catch (Exception e) {
 
-            LOG.info("Caught Exception in GlobalFilterExceptionHandler...");
+            HttpStatus httpStatus;
+            String message;
 
             if (e instanceof CustomException) {
+
                 CustomException customException = (CustomException) e;
-                response.setStatus(customException.getStatusCode());
-                HttpStatus status = HttpStatus.valueOf(customException.getStatusCode());
-                response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
-                ErrorDto error = new ErrorDto(status.name(), customException.getMessage());
-                response.getWriter().write(FilterUtils.convertObjectToJson(error));
+                httpStatus = HttpStatus.valueOf(customException.getStatusCode());
+                message = e.getMessage();
+            } else if(e instanceof JwtException) {
+
+                httpStatus = HttpStatus.UNAUTHORIZED;
+                message = EXCEPTION_JWT_INVALID;
             } else {
-
-                // Respond with status 500
-                HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-
-                response.setStatus(httpStatus.value());
-                response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
-                ErrorDto error = new ErrorDto(httpStatus.name(), e.getMessage());
-                response.getWriter().write(FilterUtils.convertObjectToJson(error));
+                httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+                message = e.getMessage();
             }
+
+            response.setStatus(httpStatus.value());
+            response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
+            ErrorDto error = new ErrorDto(httpStatus.name(), message);
+            response.getWriter().write(FilterUtils.convertObjectToJson(error));
 
         }
     }

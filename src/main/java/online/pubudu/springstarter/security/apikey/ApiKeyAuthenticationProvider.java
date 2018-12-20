@@ -1,4 +1,4 @@
-package online.pubudu.springstarter.security;
+package online.pubudu.springstarter.security.apikey;
 
 import online.pubudu.springstarter.exception.CustomException;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,7 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
-import static online.pubudu.springstarter.util.Constants.*;
+import static online.pubudu.springstarter.util.Constants.EXCEPTION_UNAUTHORIZED;
 
 /**
  * Created by pubudu welagedara on 12/17/18.
