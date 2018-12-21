@@ -52,6 +52,7 @@ public class GlobalFilterExceptionHandler extends OncePerRequestFilter {
             response.setStatus(httpStatus.value());
             response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
             ErrorDto error = new ErrorDto(httpStatus.name(), message);
+            // TODO: 12/21/18 Use ObjectMapper Bean direclty 
             response.getWriter().write(FilterUtils.convertObjectToJson(error));
 
         }
