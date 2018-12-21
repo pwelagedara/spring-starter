@@ -10,5 +10,6 @@ public final class Constants {
 
     public static final String EXCEPTION_UNAUTHORIZED = "You are not authenticated to access this resource";
     public static final String EXCEPTION_JWT_INVALID = "Invalid Token";
+    public static final String EXCEPTION_AUTHENTICATION_FAILURE = "Authentication Failed";
 
 }

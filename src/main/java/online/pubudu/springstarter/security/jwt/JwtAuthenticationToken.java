@@ -20,7 +20,8 @@ public class JwtAuthenticationToken extends AbstractAuthenticationToken {
     }
 
     public JwtAuthenticationToken(String subject, String token, List<String> authorities) {
-        super(authorities.stream().map(s -> AuthorityUtils.commaSeparatedStringToAuthorityList(s).get(0)).collect(Collectors.toList()));
+        // TODO: 12/21/18 Write the below line in a better way
+        super(authorities.stream().map(a -> AuthorityUtils.commaSeparatedStringToAuthorityList(a).get(0)).collect(Collectors.toList()));
         this.subject = subject;
         this.token = token;
     }

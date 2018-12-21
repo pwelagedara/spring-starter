@@ -51,13 +51,13 @@ public class JwtUtils {
 
         return Jwts.builder()
                 .setClaims(claims)
-                .signWith(SignatureAlgorithm.HS256, secret)
+                .signWith(SignatureAlgorithm.HS256, this.secret)
                 .compact();
     }
 
     // Will throw an Exception if the token is invalid
     public void validateToken(String token, String subject) {
-        Jwts.parser().requireSubject(subject).setSigningKey(secret).parseClaimsJws(token);
+        Jwts.parser().requireSubject(subject).setSigningKey(this.secret).parseClaimsJws(token);
     }
 
     public String getSubject(String token) {
