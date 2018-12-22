@@ -1,4 +1,4 @@
-package online.pubudu.springstarter.security.jwt;
+package online.pubudu.springstarter.security.jwt.login;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
  * Created by pubudu welagedara on 12/17/18.
  */
 @Component
-public class JwtAuthenticationSuccessHandler implements AuthenticationSuccessHandler{
+public class JwtLoginSuccessHandler implements AuthenticationSuccessHandler{
 
     @Autowired
     private JwtUtils jwtUtils;

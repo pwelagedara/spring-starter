@@ -1,4 +1,4 @@
-package online.pubudu.springstarter.security.jwt;
+package online.pubudu.springstarter.security.jwt.login;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

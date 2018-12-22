@@ -1,4 +1,4 @@
-package online.pubudu.springstarter.security.jwt;
+package online.pubudu.springstarter.security.jwt.login;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import online.pubudu.springstarter.dto.ErrorDto;
@@ -20,7 +20,7 @@ import static online.pubudu.springstarter.util.Constants.EXCEPTION_AUTHENTICATIO
  * Created by pubudu welagedara on 12/17/18.
  */
 @Component
-public class JwtAuthenticationFailureHandler implements AuthenticationFailureHandler {
+public class JwtLoginFailureHandler implements AuthenticationFailureHandler {
 
     @Autowired
     private ObjectMapper objectMapper;

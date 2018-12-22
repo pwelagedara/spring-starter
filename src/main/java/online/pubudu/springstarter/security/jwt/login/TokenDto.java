@@ -1,4 +1,4 @@
-package online.pubudu.springstarter.security.jwt;
+package online.pubudu.springstarter.security.jwt.login;
 
 /**
  * Created by pubudu welagedara on 12/17/18.

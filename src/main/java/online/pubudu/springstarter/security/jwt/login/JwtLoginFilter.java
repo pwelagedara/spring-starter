@@ -1,4 +1,4 @@
-package online.pubudu.springstarter.security.jwt;
+package online.pubudu.springstarter.security.jwt.login;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import online.pubudu.springstarter.exception.CustomException;
