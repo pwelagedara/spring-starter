@@ -1,8 +1,8 @@
 package online.pubudu.springstarter.dto;
 
-/**
- * Created by pubudu welagedara on 12/17/18.
- */
+/*
+* Created by pubudu welagedara on 12/17/18.
+* */
 public class ErrorDto {
 
     private String error;

@@ -2,10 +2,10 @@ package online.pubudu.springstarter.exception;
 
 import org.springframework.http.HttpStatus;
 
-/**
- * Created by pubudu welagedara on 12/17/18.
- */
-public class CustomException extends RuntimeException {
+/*
+* Created by pubudu welagedara on 12/17/18.
+* */
+public class CustomException extends Exception {
 
     // Status Code is usually 400
     private int statusCode = HttpStatus.BAD_REQUEST.value();

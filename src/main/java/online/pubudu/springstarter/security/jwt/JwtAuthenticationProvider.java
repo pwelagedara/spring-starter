@@ -1,15 +1,14 @@
 package online.pubudu.springstarter.security.jwt;
 
-import online.pubudu.springstarter.security.jwt.login.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by pubudu welagedara on 12/17/18.
- */
+/*
+* Created by pubudu welagedara on 12/17/18.
+* */
 @Component
 public class JwtAuthenticationProvider implements AuthenticationProvider {
 

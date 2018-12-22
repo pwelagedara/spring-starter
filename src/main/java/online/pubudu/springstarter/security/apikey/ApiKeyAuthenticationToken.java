@@ -3,9 +3,9 @@ package online.pubudu.springstarter.security.apikey;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.authority.AuthorityUtils;
 
-/**
- * Created by pubudu welagedara on 12/17/18.
- */
+/*
+* Created by pubudu welagedara on 12/17/18.
+* */
 public class ApiKeyAuthenticationToken extends AbstractAuthenticationToken {
 
     private String apiKey;

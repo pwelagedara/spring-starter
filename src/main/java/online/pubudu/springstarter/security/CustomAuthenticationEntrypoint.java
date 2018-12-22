@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by pubudu welagedara on 12/17/18.
- */
+/*
+* Created by pubudu welagedara on 12/17/18.
+* */
 @Component
 public class CustomAuthenticationEntrypoint implements AuthenticationEntryPoint {
 

@@ -19,9 +19,9 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-/**
- * Created by pubudu welagedara on 12/17/18.
- */
+/*
+* Created by pubudu welagedara on 12/17/18.
+* */
 @Configuration
 @Profile("jwt")
 @EnableWebSecurity(debug = true)
@@ -45,6 +45,11 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CustomAuthenticationEntrypoint customAuthenticationEntrypoint;
 
+    /*
+    * Protected endpoints need ADMIN Role to work
+    * If the Role is wrong a 403 Forbidden Response will be shown
+    * Remove ".antMatchers("/protected/**").hasRole("ADMIN")" to allow any Role in
+    * */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -59,6 +64,7 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
                     .authorizeRequests()
                     .antMatchers("/public/**").permitAll()
                     .antMatchers("/auth/login").permitAll()
+                    .antMatchers("/protected/**").hasRole("ADMIN")
                     .anyRequest().authenticated()
                     .and()
                     .addFilterBefore(new JwtLoginFilter("/auth/login", authenticationManager(), authenticationSuccessHandler, authenticationFailureHandler, objectMapper), UsernamePasswordAuthenticationFilter.class)

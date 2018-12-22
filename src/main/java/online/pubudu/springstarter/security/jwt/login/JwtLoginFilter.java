@@ -1,9 +1,8 @@
 package online.pubudu.springstarter.security.jwt.login;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import online.pubudu.springstarter.exception.CustomException;
+import online.pubudu.springstarter.security.jwt.exception.JwtAuthenticationException;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -16,8 +15,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-import static online.pubudu.springstarter.util.Constants.EXCEPTION_UNAUTHORIZED;
 
 /**
  * Created by pubudu welagedara on 12/17/18.
@@ -37,7 +34,8 @@ public class JwtLoginFilter  extends AbstractAuthenticationProcessingFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws AuthenticationException, IOException, ServletException {
         if (!HttpMethod.POST.name().equals(httpServletRequest.getMethod())){
-            throw new CustomException(EXCEPTION_UNAUTHORIZED, HttpStatus.UNAUTHORIZED.value());
+            //throw new CustomException(EXCEPTION_UNAUTHORIZED, HttpStatus.UNAUTHORIZED.value());
+            throw new JwtAuthenticationException();
         }
 
         LoginDto loginDto = objectMapper.readValue(httpServletRequest.getInputStream(), LoginDto.class);

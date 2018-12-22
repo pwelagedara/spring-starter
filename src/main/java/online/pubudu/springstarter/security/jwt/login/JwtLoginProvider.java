@@ -1,5 +1,6 @@
 package online.pubudu.springstarter.security.jwt.login;
 
+import online.pubudu.springstarter.security.jwt.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

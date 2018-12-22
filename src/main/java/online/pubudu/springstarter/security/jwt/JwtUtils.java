@@ -1,4 +1,4 @@
-package online.pubudu.springstarter.security.jwt.login;
+package online.pubudu.springstarter.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Function;
 
-/**
- * Created by pubudu welagedara on 12/17/18.
- */
+/*
+* Created by pubudu welagedara on 12/17/18.
+* */
 @Component
 public class JwtUtils {
 

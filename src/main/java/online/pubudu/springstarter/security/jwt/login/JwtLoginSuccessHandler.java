@@ -1,6 +1,7 @@
 package online.pubudu.springstarter.security.jwt.login;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import online.pubudu.springstarter.security.jwt.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

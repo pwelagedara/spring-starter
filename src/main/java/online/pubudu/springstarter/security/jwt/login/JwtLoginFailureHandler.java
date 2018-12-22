@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static online.pubudu.springstarter.util.Constants.EXCEPTION_AUTHENTICATION_FAILURE;
+import static online.pubudu.springstarter.util.Literals.EXCEPTION_AUTHENTICATION_FAILED;
 
 /**
  * Created by pubudu welagedara on 12/17/18.
@@ -28,7 +28,7 @@ public class JwtLoginFailureHandler implements AuthenticationFailureHandler {
     @Override
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
         HttpStatus httpStatus = HttpStatus.UNAUTHORIZED;
-        String message = EXCEPTION_AUTHENTICATION_FAILURE;
+        String message = EXCEPTION_AUTHENTICATION_FAILED;
         httpServletResponse.setStatus(httpStatus.value());
         httpServletResponse.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
         ErrorDto error = new ErrorDto(httpStatus.name(), message);

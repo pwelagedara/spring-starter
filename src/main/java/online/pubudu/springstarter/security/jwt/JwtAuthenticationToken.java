@@ -6,9 +6,9 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by pubudu welagedara on 12/17/18.
- */
+/*
+* Created by pubudu welagedara on 12/17/18.
+* */
 public class JwtAuthenticationToken extends AbstractAuthenticationToken {
 
     private String subject;

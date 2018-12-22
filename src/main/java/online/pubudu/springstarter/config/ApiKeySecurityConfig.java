@@ -3,8 +3,8 @@ package online.pubudu.springstarter.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import online.pubudu.springstarter.security.CustomAccessDeniedHandler;
 import online.pubudu.springstarter.security.CustomAuthenticationEntrypoint;
+import online.pubudu.springstarter.security.apikey.ApiKeyAuthenticationFilter;
 import online.pubudu.springstarter.security.apikey.ApiKeyAuthenticationProvider;
-import online.pubudu.springstarter.security.jwt.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -15,9 +15,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-/**
- * Created by pubudu welagedara on 12/17/18.
- */
+/*
+* Created by pubudu welagedara on 12/17/18.
+* */
 @Configuration
 @Profile("apikey")
 @EnableWebSecurity(debug = true)
@@ -47,7 +47,7 @@ public class ApiKeySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/public/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .addFilterBefore(new JwtAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new ApiKeyAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
