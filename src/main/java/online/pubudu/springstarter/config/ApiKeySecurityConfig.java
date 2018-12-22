@@ -1,5 +1,6 @@
 package online.pubudu.springstarter.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import online.pubudu.springstarter.security.CustomAccessDeniedHandler;
 import online.pubudu.springstarter.security.CustomAuthenticationEntrypoint;
 import online.pubudu.springstarter.security.apikey.ApiKeyAuthenticationProvider;
@@ -19,7 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  */
 @Configuration
 @Profile("apikey")
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 public class ApiKeySecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -27,6 +28,9 @@ public class ApiKeySecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private CustomAuthenticationEntrypoint customAuthenticationEntrypoint;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -37,7 +41,7 @@ public class ApiKeySecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .exceptionHandling().authenticationEntryPoint(customAuthenticationEntrypoint)
-                .accessDeniedHandler(new CustomAccessDeniedHandler())
+                .accessDeniedHandler(new CustomAccessDeniedHandler(objectMapper))
                 .and()
                 .authorizeRequests()
                 .antMatchers("/public/**").permitAll()

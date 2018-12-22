@@ -1,7 +1,8 @@
 package online.pubudu.springstarter.security.jwt;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import online.pubudu.springstarter.dto.ErrorDto;
-import online.pubudu.springstarter.util.FilterUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
@@ -15,8 +16,14 @@ import java.io.IOException;
 
 import static online.pubudu.springstarter.util.Constants.EXCEPTION_AUTHENTICATION_FAILURE;
 
+/**
+ * Created by pubudu welagedara on 12/17/18.
+ */
 @Component
 public class JwtAuthenticationFailureHandler implements AuthenticationFailureHandler {
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
@@ -25,6 +32,6 @@ public class JwtAuthenticationFailureHandler implements AuthenticationFailureHan
         httpServletResponse.setStatus(httpStatus.value());
         httpServletResponse.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
         ErrorDto error = new ErrorDto(httpStatus.name(), message);
-        httpServletResponse.getWriter().write(FilterUtils.convertObjectToJson(error));
+        objectMapper.writeValue(httpServletResponse.getWriter(), error);
     }
 }

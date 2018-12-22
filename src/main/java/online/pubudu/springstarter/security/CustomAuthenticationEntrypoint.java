@@ -1,7 +1,8 @@
 package online.pubudu.springstarter.security;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import online.pubudu.springstarter.dto.ErrorDto;
-import online.pubudu.springstarter.util.FilterUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
@@ -13,8 +14,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Created by pubudu welagedara on 12/17/18.
+ */
 @Component
 public class CustomAuthenticationEntrypoint implements AuthenticationEntryPoint {
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
@@ -25,6 +32,6 @@ public class CustomAuthenticationEntrypoint implements AuthenticationEntryPoint 
         httpServletResponse.setStatus(httpStatus.value());
         httpServletResponse.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
         ErrorDto error = new ErrorDto(httpStatus.name(), e.getMessage());
-        httpServletResponse.getWriter().write(FilterUtils.convertObjectToJson(error));
+        objectMapper.writeValue(httpServletResponse.getWriter(), error);
     }
 }

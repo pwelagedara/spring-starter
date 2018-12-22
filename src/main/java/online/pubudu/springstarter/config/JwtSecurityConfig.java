@@ -54,7 +54,7 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                     .exceptionHandling().authenticationEntryPoint(customAuthenticationEntrypoint)
-                    .accessDeniedHandler(new CustomAccessDeniedHandler())
+                    .accessDeniedHandler(new CustomAccessDeniedHandler(objectMapper))
                 .and()
                     .authorizeRequests()
                     .antMatchers("/public/**").permitAll()

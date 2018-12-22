@@ -19,6 +19,9 @@ import java.io.IOException;
 
 import static online.pubudu.springstarter.util.Constants.EXCEPTION_UNAUTHORIZED;
 
+/**
+ * Created by pubudu welagedara on 12/17/18.
+ */
 public class JwtLoginFilter  extends AbstractAuthenticationProcessingFilter {
 
     private ObjectMapper objectMapper;

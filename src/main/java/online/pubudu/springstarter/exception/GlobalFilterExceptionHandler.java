@@ -1,8 +1,9 @@
 package online.pubudu.springstarter.exception;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.JwtException;
 import online.pubudu.springstarter.dto.ErrorDto;
-import online.pubudu.springstarter.util.FilterUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,9 @@ import static online.pubudu.springstarter.util.Constants.EXCEPTION_JWT_INVALID;
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class GlobalFilterExceptionHandler extends OncePerRequestFilter {
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -52,8 +56,7 @@ public class GlobalFilterExceptionHandler extends OncePerRequestFilter {
             response.setStatus(httpStatus.value());
             response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
             ErrorDto error = new ErrorDto(httpStatus.name(), message);
-            // TODO: 12/21/18 Use ObjectMapper Bean direclty 
-            response.getWriter().write(FilterUtils.convertObjectToJson(error));
+            objectMapper.writeValue(response.getWriter(), error);
 
         }
     }

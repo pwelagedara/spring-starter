@@ -1,5 +1,8 @@
 package online.pubudu.springstarter.security.jwt;
 
+/**
+ * Created by pubudu welagedara on 12/17/18.
+ */
 public class TokenDto {
 
     private String token;

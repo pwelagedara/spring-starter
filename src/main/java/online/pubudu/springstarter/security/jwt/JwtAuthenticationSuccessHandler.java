@@ -1,6 +1,6 @@
 package online.pubudu.springstarter.security.jwt;
 
-import online.pubudu.springstarter.util.FilterUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,14 +15,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Created by pubudu welagedara on 12/17/18.
+ */
 @Component
 public class JwtAuthenticationSuccessHandler implements AuthenticationSuccessHandler{
 
     @Autowired
     private JwtUtils jwtUtils;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
 
@@ -36,6 +42,6 @@ public class JwtAuthenticationSuccessHandler implements AuthenticationSuccessHan
         httpServletResponse.setStatus(httpStatus.value());
         httpServletResponse.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
         TokenDto tokenDto = new TokenDto(token);
-        httpServletResponse.getWriter().write(FilterUtils.convertObjectToJson(tokenDto));
+        objectMapper.writeValue(httpServletResponse.getWriter(), tokenDto);
     }
 }

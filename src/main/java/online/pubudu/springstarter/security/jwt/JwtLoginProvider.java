@@ -1,16 +1,12 @@
 package online.pubudu.springstarter.security.jwt;
 
-import online.pubudu.springstarter.exception.CustomException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Component;
-
-import static online.pubudu.springstarter.util.Constants.EXCEPTION_UNAUTHORIZED;
 
 /**
  * Created by pubudu welagedara on 12/17/18.
