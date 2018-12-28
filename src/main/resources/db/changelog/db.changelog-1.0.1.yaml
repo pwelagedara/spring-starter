@@ -1,0 +1,13 @@
+databaseChangeLog:
+    - changeSet:
+        id: 5
+        author: pubuduwelagedara
+        # https://www.liquibase.org/documentation/changeset.html
+        # https://www.liquibase.org/databases.html
+        dbms: mysql
+        changes:
+            # https://www.liquibase.org/documentation/changes/add_auto_increment.html
+            - addAutoIncrement:
+                tableName: employee
+                columnName: id
+                columnDataType: int

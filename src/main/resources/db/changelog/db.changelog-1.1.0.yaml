@@ -1,0 +1,24 @@
+databaseChangeLog:
+    - changeSet:
+        id: 2
+        author: pubuduwelagedara
+        changes:
+            - createTable:
+                tableName: manager
+                # https://www.liquibase.org/documentation/column.html
+                columns:
+                    - column:
+                        name: id
+                        type: int
+                        constraints:
+                            primaryKey: true
+                            nullable: false
+                            foreignKeyName: fk_manager_employee
+                            references: employee(id)
+                            deleteCascade: true # On Update Cascade will have no effect here as we are Auto Incrementing the Primary Key
+
+                    - column:
+                        name: address
+                        type: varchar(255)
+                        constraints:
+                            nullable: false

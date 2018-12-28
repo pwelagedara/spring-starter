@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: h2,jwt
+
+security:
+  api-key: abc
+  jwt:
+    secret: thisisasecret
+    expiration: 8088888
+    authorities-claim: scopes

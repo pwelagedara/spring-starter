@@ -1,0 +1,14 @@
+databaseChangeLog:
+    - changeSet:
+        id: 6
+        author: pubuduwelagedara
+        # https://www.liquibase.org/documentation/changeset.html
+        # https://www.liquibase.org/databases.html
+        dbms: h2,postgresql
+        changes:
+            # https://www.liquibase.org/documentation/changes/create_sequence.html
+            - createSequence:
+                sequenceName: seq_employee_id
+                startValue: 1
+                incrementBy: 5 # Has to be equal to allocationSize in @SequenceGenerator. The app contacts the db once every 5 entries here
+                minValue: 1

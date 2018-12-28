@@ -38,16 +38,19 @@ public class ApiKeySecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .httpBasic().disable()
                 .csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .headers().frameOptions().sameOrigin() // For H2 Console to work
                 .and()
-                .exceptionHandling().authenticationEntryPoint(customAuthenticationEntrypoint)
-                .accessDeniedHandler(new CustomAccessDeniedHandler(objectMapper))
+                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .authorizeRequests()
-                .antMatchers("/public/**").permitAll()
-                .anyRequest().authenticated()
+                    .exceptionHandling().authenticationEntryPoint(customAuthenticationEntrypoint)
+                    .accessDeniedHandler(new CustomAccessDeniedHandler(objectMapper))
                 .and()
-                .addFilterBefore(new ApiKeyAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
+                    .authorizeRequests()
+                    .antMatchers("/public/**").permitAll()
+                    .antMatchers("/h2-console/**").permitAll() // For H2 Console to work
+                    .anyRequest().authenticated()
+                .and()
+                    .addFilterBefore(new ApiKeyAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override

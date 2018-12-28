@@ -1,0 +1,21 @@
+databaseChangeLog:
+    - changeSet:
+        id: 1
+        author: pubuduwelagedara
+        changes:
+            - createTable:
+                tableName: employee
+                columns:
+                    - column:
+                        name: id
+                        type: int
+                        constraints:
+                            primaryKey: true
+                            nullable: false
+                        # Use property tag to add remove autoIncrement
+                        # https://juliuskrah.com/tutorial/2017/02/26/database-migration-with-liquibase-hikaricp-hibernate-and-jpa/
+                    - column:
+                        name: name
+                        type: varchar(255)
+                        constraints:
+                            nullable: false

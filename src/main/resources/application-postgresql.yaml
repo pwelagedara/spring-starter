@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    # Show SQL
+    # https://www.baeldung.com/sql-logging-spring-boot
+    show-sql: true
+    properties:
+      hibernate:
+        # https://docs.jboss.org/hibernate/orm/5.0/javadocs/org/hibernate/dialect/package-summary.html
+        dialect: org.hibernate.dialect.PostgreSQL94Dialect
+        ddl-auto: validate # This is none by default and we do not need to use this because we are using Liquibase for Database Initialization.https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html
+        # To remove java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgConnection.createClob() in PostgreSQL
+        # https://stackoverflow.com/questions/49110818/method-org-postgresql-jdbc-pgconnection-createclob-is-not-yet-implemented
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        # Beutify SQL
+        # https://www.baeldung.com/sql-logging-spring-boot
+        format_sql: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/database
+    username: postgres
+    password: postgres

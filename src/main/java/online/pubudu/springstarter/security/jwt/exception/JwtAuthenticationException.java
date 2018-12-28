@@ -10,7 +10,7 @@ import static online.pubudu.springstarter.util.Literals.EXCEPTION_AUTHENTICATION
 * */
 public class JwtAuthenticationException extends AuthenticationException {
 
-    // Status Code is usually 400
+    // Status Code is usually 401
     private int statusCode = HttpStatus.UNAUTHORIZED.value();
 
     public JwtAuthenticationException() {

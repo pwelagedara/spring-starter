@@ -56,17 +56,20 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
             http
                 .httpBasic().disable()
                 .csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .headers().frameOptions().sameOrigin() // For H2 Console to work
+                .and()
+                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                     .exceptionHandling().authenticationEntryPoint(customAuthenticationEntrypoint)
                     .accessDeniedHandler(new CustomAccessDeniedHandler(objectMapper))
                 .and()
                     .authorizeRequests()
                     .antMatchers("/public/**").permitAll()
+                    .antMatchers("/h2-console/**").permitAll() // For H2 Console to work
                     .antMatchers("/auth/login").permitAll()
                     .antMatchers("/protected/**").hasRole("ADMIN")
                     .anyRequest().authenticated()
-                    .and()
+                .and()
                     .addFilterBefore(new JwtLoginFilter("/auth/login", authenticationManager(), authenticationSuccessHandler, authenticationFailureHandler, objectMapper), UsernamePasswordAuthenticationFilter.class)
                     .addFilterBefore(new JwtAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
     }
