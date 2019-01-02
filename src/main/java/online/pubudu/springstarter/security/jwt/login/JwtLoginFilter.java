@@ -34,7 +34,6 @@ public class JwtLoginFilter  extends AbstractAuthenticationProcessingFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws AuthenticationException, IOException, ServletException {
         if (!HttpMethod.POST.name().equals(httpServletRequest.getMethod())){
-            //throw new CustomException(EXCEPTION_UNAUTHORIZED, HttpStatus.UNAUTHORIZED.value());
             throw new JwtAuthenticationException();
         }
 

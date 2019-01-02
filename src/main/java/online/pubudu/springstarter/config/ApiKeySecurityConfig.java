@@ -48,6 +48,7 @@ public class ApiKeySecurityConfig extends WebSecurityConfigurerAdapter {
                     .authorizeRequests()
                     .antMatchers("/public/**").permitAll()
                     .antMatchers("/h2-console/**").permitAll() // For H2 Console to work
+                    .antMatchers("/v2/api-docs").permitAll() // For Swagger Documents to work
                     .anyRequest().authenticated()
                 .and()
                     .addFilterBefore(new ApiKeyAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);

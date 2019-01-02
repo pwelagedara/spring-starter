@@ -1,10 +1,34 @@
 spring:
   profiles:
-    active: h2,jwt
+    active: h2,apikey
 
 security:
+  # Spring Security Filter Order
+  filter-order: 5
   api-key: abc
   jwt:
     secret: thisisasecret
     expiration: 8088888
     authorities-claim: scopes
+
+# Swagger Definitions
+# If you end up with a lot of Swagger Definitions, consider moving this Section to a seperate Swagger Properties File
+# DTOs
+error-dto:
+  error:
+    value: Error
+  message:
+    value: Message associated with the Error
+
+message-dto:
+  message:
+    value: Message associated with the Error
+
+# Controllers
+sample-controller:
+  tell-something:
+    value: Public Endpoint
+    notes: This is an endpoint which is accessible by everyone
+  tell-a-secret:
+    value: Protected Endpoint
+    notes: This is an endpoint which is accessible for authenticated/ authorized users

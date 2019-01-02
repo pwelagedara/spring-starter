@@ -66,6 +66,7 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
                     .authorizeRequests()
                     .antMatchers("/public/**").permitAll()
                     .antMatchers("/h2-console/**").permitAll() // For H2 Console to work
+                    .antMatchers("/v2/api-docs").permitAll() // For Swagger Documents to work
                     .antMatchers("/auth/login").permitAll()
                     .antMatchers("/protected/**").hasRole("ADMIN")
                     .anyRequest().authenticated()

@@ -1,0 +1,12 @@
+# Swagger Definitions
+# If you end up with a lot of Swagger Definitions, consider moving this Section to a seperate Swagger Properties File
+# DTOs
+login-dto:
+  username:
+    value: Username
+  password:
+    value: Password of the User
+
+token-dto:
+  token:
+    value: This is the JWT
