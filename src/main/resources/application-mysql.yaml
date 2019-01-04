@@ -16,6 +16,7 @@ spring:
     # You do not need to do a lot to override Annotations with orm.xml file. Just add your mapping-resources here
     # Hibernate by default reads the orm.xml file from META-INF directory. If you have the file in the correct place it will be used
     # To activate the file based on the Spring Profile use mapping-resources. For this to work do not keep orm.xml in META-INF.
+    # https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
     mapping-resources:
       - db/orm/mysql-orm.xml
     properties:
