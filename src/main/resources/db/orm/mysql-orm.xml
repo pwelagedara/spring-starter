@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--https://thoughts-on-java.org/hibernate-tips-override-primary-key-generation-strategy/-->
+<!--https://stackoverflow.com/questions/32062828/spring-boot-load-orm-xml-->
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd"
+                 version="2.2">
+    <package>online.pubudu.springstarter.integration.database.entity</package>
+    <entity class="Employee" access="FIELD">
+        <attributes>
+            <id name="id">
+                <generated-value strategy="IDENTITY"/>
+            </id>
+        </attributes>
+    </entity>
+</entity-mappings>
