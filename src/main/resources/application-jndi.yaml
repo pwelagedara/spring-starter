@@ -1,0 +1,10 @@
+# https://www.onlinetutorialspoint.com/spring-boot/spring-boot-jndi-configuration-external-tomcat.html
+# To set the Environment Variables in Tomcat use the link below
+# https://myupbeat.wordpress.com/2013/03/07/spring-profiles-and-tomcat/
+spring:
+  datasource:
+    jndi-name: java:comp/env/jdbc/jndi
+  jpa:
+    # This is there since I am using MySQL in my JNDI configuration
+    mapping-resources:
+      - db/orm/mysql-orm.xml
