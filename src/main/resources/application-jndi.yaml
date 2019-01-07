@@ -3,8 +3,13 @@
 # https://myupbeat.wordpress.com/2013/03/07/spring-profiles-and-tomcat/
 spring:
   datasource:
+    # https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html
     jndi-name: java:comp/env/jdbc/jndi
   jpa:
     # This is there since I am using MySQL in my JNDI configuration
     mapping-resources:
       - db/orm/mysql-orm.xml
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        ddl-auto: validate
