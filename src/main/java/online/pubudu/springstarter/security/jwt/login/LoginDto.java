@@ -2,7 +2,6 @@ package online.pubudu.springstarter.security.jwt.login;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import static online.pubudu.springstarter.util.Literals.ERROR_DTO_ERROR_EXAMPLE;
 import static online.pubudu.springstarter.util.Literals.LOGIN_DTO_PASSWORD_EXAMPLE;
 import static online.pubudu.springstarter.util.Literals.LOGIN_DTO_USERNAME_EXAMPLE;
 

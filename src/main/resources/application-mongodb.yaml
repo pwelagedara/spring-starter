@@ -1,0 +1,5 @@
+# Disable Liquibase for MongoDB
+# https://stackoverflow.com/questions/37708145/spring-boot-disable-liquibase-at-startup
+spring:
+  liquibase:
+    enabled: false

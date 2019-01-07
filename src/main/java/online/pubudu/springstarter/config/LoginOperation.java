@@ -15,7 +15,6 @@ import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiDescription;
 import springfox.documentation.service.ApiListing;
 import springfox.documentation.service.Operation;
-import springfox.documentation.service.ResponseMessage;
 import springfox.documentation.spring.web.plugins.DocumentationPluginsManager;
 import springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator;
 import springfox.documentation.spring.web.scanners.ApiDescriptionReader;

@@ -11,24 +11,41 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'application'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
+// Here you can use build profiles etc
+// https://www.credera.com/blog/technology-insights/java/gradle-profiles-for-multi-project-spring-boot-applications/
+// I am not going to use them as it is too much unnecessary work for a starter project
+// You can use a gradle.properties file as well
+ext {
+	mongoDBMainClassName='online.pubudu.springstarter.SpringStarterApplicationMongoDB'
+	defaultMainClassName='online.pubudu.springstarter.SpringStarterApplication'
+	isMongoDB = System.properties['env'] == 'mongodb'
+}
+
 group = 'online.pubudu'
-version = '0.0.1-SNAPSHOT'
+
 sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
 
+if (isMongoDB) {
+	mainClassName = mongoDBMainClassName
+} else {
+	mainClassName = defaultMainClassName
+}
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-security')
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation('io.jsonwebtoken:jjwt:0.9.1')
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	implementation('org.springframework.boot:spring-boot-starter-data-mongodb')
 	implementation("org.liquibase:liquibase-core")
 	implementation("io.springfox:springfox-swagger2:2.7.0")
 	implementation("com.google.guava:guava:27.0.1-jre")
