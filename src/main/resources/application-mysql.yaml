@@ -21,7 +21,8 @@ spring:
       - db/orm/mysql-orm.xml
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
+        # https://stackoverflow.com/questions/44460662/which-dialect-should-i-use-for-mysql-6-in-hibernate
+        dialect: org.hibernate.dialect.MySQL57Dialect
         ddl-auto: validate # This is none by default and we do not need to use this because we are using Liquibase for Database Initialization.https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html
         # Beutify SQL
         # https://www.baeldung.com/sql-logging-spring-boot
