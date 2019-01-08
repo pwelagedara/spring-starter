@@ -25,6 +25,9 @@ apply plugin: 'io.spring.dependency-management'
 ext {
 	mongoDBMainClassName='online.pubudu.springstarter.SpringStarterApplicationMongoDB'
 	defaultMainClassName='online.pubudu.springstarter.SpringStarterApplication'
+	// This seems a little tricky because profile stated in application.yaml is not accessible from gradle
+	// But if you add -Dspring.profiles.active=mongodb flag to ./gradlew bootRun you will be able to read the Active Environment
+	// Therefore note that is not a perfect solution
 	isMongoDB = System.properties['env'] == 'mongodb'
 }
 
