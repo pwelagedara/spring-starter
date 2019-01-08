@@ -16,6 +16,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
+// https://stackoverflow.com/questions/40659986/maven-profiles-equivalent-of-gradle
 // Here you can use build profiles etc
 // https://www.credera.com/blog/technology-insights/java/gradle-profiles-for-multi-project-spring-boot-applications/
 // I am not going to use them as it is too much unnecessary work for a starter project
