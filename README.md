@@ -27,9 +27,9 @@ To build the project disable the tests( only in all_in_one branch)
 ./gradlew clean build -x test
 ```
 
-## Javadocs 
+## JavaDocs 
 
-Go to tools -> generate javadocs in IntelliJ to generate Javadocs.
+Go to Tools -> Generate JavaDocs in IntelliJ to generate JavaDocs.
 
 https://www.baeldung.com/javadoc
 
