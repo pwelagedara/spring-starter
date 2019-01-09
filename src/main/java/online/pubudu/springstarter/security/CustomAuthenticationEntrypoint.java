@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * <p>
- *      Authentication Entry Point
- * </p>
+ * Authentication Entry Point.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

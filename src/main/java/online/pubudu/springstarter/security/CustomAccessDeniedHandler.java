@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * <p>
- *      Access Denied Handler
- * </p>
+ * Access Denied Handler.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

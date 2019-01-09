@@ -11,9 +11,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * <p>
- *      The Controller Advice to handle Exceptions in the Controllers.
- * </p>
+ * The Controller Advice to handle Exceptions in the Controllers.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

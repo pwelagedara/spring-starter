@@ -8,9 +8,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
 /**
- * <p>
- *      Custom Authentication Provider
- * </p>
+ * Custom Authentication Provider
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

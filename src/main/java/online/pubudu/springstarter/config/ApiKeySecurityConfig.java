@@ -16,9 +16,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
+ * API Key Security configuration is here. This is activated by <b>apikey</b> Spring Profile.
  * <p>
- *     API Key Security configuration is here. This is activated by <b>apikey</b> Spring Profile.
- * </p>
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

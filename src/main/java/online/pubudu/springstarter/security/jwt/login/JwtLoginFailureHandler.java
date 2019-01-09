@@ -17,9 +17,7 @@ import java.io.IOException;
 import static online.pubudu.springstarter.util.Literals.EXCEPTION_AUTHENTICATION_FAILED;
 
 /**
- * <p>
- *      Failure handler for <b>/auth/login</b>.
- * </p>
+ * Failure handler for <b>/auth/login</b>.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

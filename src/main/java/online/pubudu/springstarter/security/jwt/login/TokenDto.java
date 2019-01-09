@@ -5,9 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import static online.pubudu.springstarter.util.Literals.TOKEN_DTO_TOKEN_EXAMPLE;
 
 /**
- * <p>
- *      Token Domain Transfer Object for <b>/auth/login</b>. This is the Response.
- * </p>
+ * Token Domain Transfer Object for <b>/auth/login</b>. This is the Response.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

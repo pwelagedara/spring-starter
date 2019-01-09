@@ -20,12 +20,9 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
+ * JWT configuration is here. This is activated by <b>jwt</b> Spring Profile.
  * <p>
- *     JWT configuration is here. This is activated by <b>jwt</b> Spring Profile.
- * </p>
- * <p>
- *     <b>/auth/login</b> endpoint is used to authenticate the user initially.
- * </p>
+ * <b>/auth/login</b> endpoint is used to authenticate the user initially.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

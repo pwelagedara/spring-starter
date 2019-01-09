@@ -3,19 +3,14 @@ package online.pubudu.springstarter.integration.database.entity;
 import javax.persistence.*;
 
 /**
+ * Database Entity Employee. For H2 and PostgreSQL GenerationType.SEQUENCE is used. For MySQL GenerationType.IDENTITY is used.
  * <p>
- *      Database Entity Employee. For H2 and PostgreSQL GenerationType.SEQUENCE is used. For MySQL GenerationType.IDENTITY is used.
- * </p>
+ * This configuration is done a using mysql-orm.xml file which overrides the Entity Configuration here.
  * <p>
- *     This configuration is done a using mysql-orm.xml file which overrides the Entity Configuration here.
- * </p>
+ * spring.jpa.mapping-resources is set in application-mysql.yaml to get this to work. If you have mysql-orm.xml in META-INF the configuration will always be overridden. Therefore have it somewhere else( like resources/db/orm/).
  * <p>
- *     spring.jpa.mapping-resources is set in application-mysql.yaml to get this to work. If you have mysql-orm.xml in META-INF the configuration will always be overridden. Therefore have it somewhere else( like resources/db/orm/).
- * </p>
- * <p>
- *     Refer to <a href="https://thoughts-on-java.org/hibernate-tips-override-primary-key-generation-strategy/">Overriding Primary Key Generation Strategy</a> and
- *     <a href="https://stackoverflow.com/questions/32062828/spring-boot-load-orm-xml">Loading ORM XML</a> for more information.
- * </p>
+ * Refer to <a href="https://thoughts-on-java.org/hibernate-tips-override-primary-key-generation-strategy/">Overriding Primary Key Generation Strategy</a> and
+ * <a href="https://stackoverflow.com/questions/32062828/spring-boot-load-orm-xml">Loading ORM XML</a> for more information.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

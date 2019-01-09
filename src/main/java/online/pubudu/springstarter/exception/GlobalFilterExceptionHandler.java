@@ -21,9 +21,7 @@ import java.io.IOException;
 import static online.pubudu.springstarter.util.Literals.EXCEPTION_AUTHENTICATION_FAILED;
 
 /**
- * <p>
- *      An Exception Handler to handle Exceptions in the Filters.
- * </p>
+ * An Exception Handler to handle Exceptions in the Filters.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

@@ -5,9 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import static online.pubudu.springstarter.util.Literals.MESSAGE_DTO_MESSAGE_EXAMPLE;
 
 /**
- * <p>
- *      Message Domain Transfer Object.
- * </p>
+ * Message Domain Transfer Object.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

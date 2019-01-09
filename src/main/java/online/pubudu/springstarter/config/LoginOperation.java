@@ -30,12 +30,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
+ * Login Operation of JWT Swagger is here. The endpoint is manually generated here.
  * <p>
- *     Login Operation of JWT Swagger is here. The endpoint is manually generated here.
- * </p>
- * <p>
- *     <a href="https://stackoverflow.com/questions/34386337/documenting-springs-login-logout-api-in-swagger">Tutorial on Exposing Login and Logout Endpoints</a>
- * </p>
+ * <a href="https://stackoverflow.com/questions/34386337/documenting-springs-login-logout-api-in-swagger">Tutorial on Exposing Login and Logout Endpoints</a>
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

@@ -6,9 +6,7 @@ import static online.pubudu.springstarter.util.Literals.ERROR_DTO_ERROR_EXAMPLE;
 import static online.pubudu.springstarter.util.Literals.ERROR_DTO_MESSAGE_EXAMPLE;
 
 /**
- * <p>
- *      Error Domain Transfer Object.
- * </p>
+ * Error Domain Transfer Object.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

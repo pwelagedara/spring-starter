@@ -4,9 +4,7 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.authority.AuthorityUtils;
 
 /**
- * <p>
- *      Custom Authentication Token
- * </p>
+ * Custom Authentication Token
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

@@ -5,9 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * <p>
- *      ManagerRepository Repository for {@link online.pubudu.springstarter.integration.database.entity.Manager}.
- * </p>
+ * ManagerRepository Repository for {@link online.pubudu.springstarter.integration.database.entity.Manager}.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

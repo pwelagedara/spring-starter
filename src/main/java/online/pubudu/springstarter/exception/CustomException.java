@@ -3,18 +3,14 @@ package online.pubudu.springstarter.exception;
 import org.springframework.http.HttpStatus;
 
 /**
- * <p>
- *      This is a Custom Exception. The status code is 400 in most cases.
- * </p>
+ * This is a Custom Exception. The status code is 400 in most cases.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */
 public class CustomException extends Exception {
 
     /**
-     * <p>
-     *     Status Code is usually 400
-     * </p>
+     * Status Code is usually 400
      * @author pubudu welagedara
      * @see <a href="http://pubudu.online">pubudu.online</a>
      */

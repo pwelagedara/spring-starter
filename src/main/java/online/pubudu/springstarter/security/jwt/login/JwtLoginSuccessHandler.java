@@ -19,9 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * <p>
- *      Success Handler for <b>/auth/login</b>.
- * </p>
+ * Success Handler for <b>/auth/login</b>.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

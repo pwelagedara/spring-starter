@@ -31,6 +31,10 @@ To build the project disable the tests( only in all_in_one branch)
 
 Go to Tools -> Generate JavaDocs in IntelliJ to generate JavaDocs.
 
+https://www.oracle.com/technetwork/java/javase/tech/index-137868.html
+
+https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#examples
+
 https://www.baeldung.com/javadoc
 
 https://www.jetbrains.com/help/idea/working-with-code-documentation.html

@@ -6,9 +6,7 @@ import org.springframework.security.core.AuthenticationException;
 import static online.pubudu.springstarter.util.Literals.EXCEPTION_AUTHENTICATION_FAILED;
 
 /**
- * <p>
- *      Custom Exception for JWTs.
- * </p>
+ * Custom Exception for JWTs.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

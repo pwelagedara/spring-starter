@@ -1,9 +1,7 @@
 package online.pubudu.springstarter.util;
 
 /**
- * <p>
- *      String Literals.
- * </p>
+ * String Literals.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

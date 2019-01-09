@@ -20,12 +20,9 @@ import java.util.List;
 import static com.google.common.collect.Lists.newArrayList;
 
 /**
+ * API Key Swagger configuration is here. This is activated by <b>apikey</b> Spring Profile.
  * <p>
- *     API Key Swagger configuration is here. This is activated by <b>apikey</b> Spring Profile.
- * </p>
- * <p>
- *     Here Swagger Security Configurations are added to <b>/protected/*</b> endpoints golbally.
- * </p>
+ * Here Swagger Security Configurations are added to <b>/protected/*</b> endpoints golbally.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

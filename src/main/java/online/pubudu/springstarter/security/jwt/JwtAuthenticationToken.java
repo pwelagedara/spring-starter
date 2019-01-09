@@ -7,9 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * <p>
- *      Custom Authentication Token
- * </p>
+ * Custom Authentication Token.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

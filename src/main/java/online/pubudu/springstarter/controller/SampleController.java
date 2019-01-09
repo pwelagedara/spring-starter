@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static online.pubudu.springstarter.util.Literals.*;
 
 /**
- *<p>
- *     This is a Sample Controller.
- *</p>
+ * This is a Sample Controller.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */
@@ -23,9 +21,7 @@ import static online.pubudu.springstarter.util.Literals.*;
 public class SampleController {
 
     /**
-     * <p>
-     *     This is a public endpoint which can be accessed only by anyone.
-     * </p>
+     * This is a public endpoint which can be accessed only by anyone.
      * @return a message
      * @author pubudu welagedara
      * @see <a href="http://pubudu.online">pubudu.online</a>
@@ -41,9 +37,7 @@ public class SampleController {
     }
 
     /**
-     * <p>
-     *     This is a protected endpoint which can only be accessed by an authenticated/ authorized user.
-     * </p>
+     * This is a protected endpoint which can only be accessed by an authenticated/ authorized user.
      * @return a message
      * @author pubudu welagedara
      * @see <a href="http://pubudu.online">pubudu.online</a>

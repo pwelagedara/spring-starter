@@ -14,9 +14,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 /**
- * <p>
- *      Authentication Filter
- * </p>
+ * Authentication Filter.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

@@ -12,9 +12,7 @@ import java.util.UUID;
 import java.util.function.Function;
 
 /**
- * <p>
- *      JWT Utilities Class
- * </p>
+ * JWT Utilities Class.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

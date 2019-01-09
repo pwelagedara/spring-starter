@@ -17,9 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * <p>
- *      Login Filter for <b>/auth/login</b>.
- * </p>
+ * Login Filter for <b>/auth/login</b>.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */

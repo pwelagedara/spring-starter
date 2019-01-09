@@ -10,9 +10,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Component;
 
 /**
- * <p>
- *      Custom Authentication Provider for <b>/auth/login</b>.
- * </p>
+ * Custom Authentication Provider for <b>/auth/login</b>.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */
