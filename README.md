@@ -1,6 +1,6 @@
 # spring-starter
 
-Having multiple classes with @SpringBootApplication is a bad idea. You will not do that in an actual application. I have done that just as a learning exercise.
+Having multiple classes with @SpringBootApplication is a bad idea. You will not do that in an actual application. I have done that just as a learning exercise. This implementation is in all_in_one branch.
 
 ## Running the project with Environment Variables
 
@@ -21,7 +21,7 @@ SPRING_PROFILES_ACTIVE="h2,apikey" java -jar ./build/libs/spring-starter.jar
 
 ## Building the project
 
-To build the project disable the tests.
+To build the project disable the tests( only in all_in_one branch)
 
 ```bash
 ./gradlew clean build -x test
