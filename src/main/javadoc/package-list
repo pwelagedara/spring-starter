@@ -1,0 +1,15 @@
+online.pubudu.springstarter
+online.pubudu.springstarter.config
+online.pubudu.springstarter.controller
+online.pubudu.springstarter.dto
+online.pubudu.springstarter.exception
+online.pubudu.springstarter.filter
+online.pubudu.springstarter.integration.database.entity
+online.pubudu.springstarter.integration.database.repository
+online.pubudu.springstarter.security
+online.pubudu.springstarter.security.apikey
+online.pubudu.springstarter.security.apikey.exception
+online.pubudu.springstarter.security.jwt
+online.pubudu.springstarter.security.jwt.exception
+online.pubudu.springstarter.security.jwt.login
+online.pubudu.springstarter.util
