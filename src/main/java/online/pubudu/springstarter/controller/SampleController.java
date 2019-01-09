@@ -6,15 +6,16 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import online.pubudu.springstarter.dto.ErrorDto;
 import online.pubudu.springstarter.dto.MessageDto;
-//import online.pubudu.springstarter.integration.database.document.User;
-//import online.pubudu.springstarter.integration.database.repository.UserRepository;
 import online.pubudu.springstarter.integration.database.document.User;
-import online.pubudu.springstarter.integration.database.mongorepository.UserRepository;
+import online.pubudu.springstarter.integration.database.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import static online.pubudu.springstarter.util.Literals.*;
+
+//import online.pubudu.springstarter.integration.database.document.User;
+//import online.pubudu.springstarter.integration.database.repository.UserRepository;
 
 /*
 * Created by pubudu welagedara on 12/17/18.

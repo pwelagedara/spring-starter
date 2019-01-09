@@ -26,3 +26,8 @@ To build the project disable the tests.
 ```bash
 ./gradlew clean build -x test
 ```
+
+## Good MongoDB Tutorial
+
+https://www.mkyong.com/spring-boot/spring-boot-spring-data-mongodb-example/
+

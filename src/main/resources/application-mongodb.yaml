@@ -1,8 +1,6 @@
 # Disable Liquibase for MongoDB
 # https://stackoverflow.com/questions/37708145/spring-boot-disable-liquibase-at-startup
 spring:
-  liquibase:
-    enabled: false
   data:
     # https://www.codementor.io/gtommee97/rest-api-java-spring-boot-and-mongodb-j7nluip8d
     # https://www.djamware.com/post/5b2f000880aca77b083240b2/spring-boot-security-and-data-mongodb-authentication-example
