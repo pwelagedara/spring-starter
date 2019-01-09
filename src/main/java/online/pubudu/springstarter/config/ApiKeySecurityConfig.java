@@ -17,7 +17,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 /**
  * API Key Security configuration is here. This is activated by <b>apikey</b> Spring Profile.
- * <p>
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */
