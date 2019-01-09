@@ -11,34 +11,9 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'application'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-
-// https://stackoverflow.com/questions/40659986/maven-profiles-equivalent-of-gradle
-// https://www.baeldung.com/spring-profiles
-// Here you can use build profiles etc
-// https://www.credera.com/blog/technology-insights/java/gradle-profiles-for-multi-project-spring-boot-applications/
-// I am not going to use them as it is too much unnecessary work for a starter project
-// You can use a gradle.properties file as well
-ext {
-	mongoDBMainClassName='online.pubudu.springstarter.SpringStarterApplicationMongoDB'
-	defaultMainClassName='online.pubudu.springstarter.SpringStarterApplication'
-	// This seems a little tricky because profile stated in application.yaml is not accessible from gradle
-	// But if you add -Dspring.profiles.active=mongodb flag to ./gradlew bootRun you will be able to read the Active Environment
-	// ./gradlew bootRun -Dspring.profiles.active=mongodb,apikey
-	// Therefore note that is not a perfect solution
-	// Refer to README.md to figure out how to set these values
-	// You can use SPRING_PROFILES_ACTIVE Environment Variable to set the profile as well
-	// That seems to be the way you will end up using if you are deploying the app on Kubernetes/ OpenShift
-
-	// Uncomment if you are using spring.profiles.active
-	// activeProfile = System.getProperty("spring.profiles.active")
-
-	// Comment if you are using spring.profiles.active
-	activeProfileFromEnvironmentVariable = "$System.env.SPRING_PROFILES_ACTIVE".contains(new StringBuffer("mongodb"))
-}
 
 group = 'online.pubudu'
 
@@ -46,24 +21,6 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
-}
-
-// Uncomment if you are using spring.profiles.active
-//if (activeProfile != null) {
-//	if (activeProfile.toString().contains(new StringBuffer("mongodb"))){
-//		mainClassName = mongoDBMainClassName
-//	} else {
-//		mainClassName = defaultMainClassName
-//	}
-//} else {
-//	mainClassName = defaultMainClassName
-//}
-
-// Comment if you are using spring.profiles.active
-if (activeProfileFromEnvironmentVariable) {
-	mainClassName = mongoDBMainClassName
-} else {
-	mainClassName = defaultMainClassName
 }
 
 dependencies {
