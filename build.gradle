@@ -27,8 +27,17 @@ ext {
 	defaultMainClassName='online.pubudu.springstarter.SpringStarterApplication'
 	// This seems a little tricky because profile stated in application.yaml is not accessible from gradle
 	// But if you add -Dspring.profiles.active=mongodb flag to ./gradlew bootRun you will be able to read the Active Environment
+	// ./gradlew bootRun -Dspring.profiles.active=mongodb,apikey
 	// Therefore note that is not a perfect solution
-	isMongoDB = System.properties['env'] == 'mongodb'
+	// Refer to README.md to figure out how to set these values
+	// You can use SPRING_PROFILES_ACTIVE Environment Variable to set the profile as well
+	// That seems to be the way you will end up using if you are deploying the app on Kubernetes/ OpenShift
+
+	// Uncomment if you are using spring.profiles.active
+	// activeProfile = System.getProperty("spring.profiles.active")
+
+	// Comment if you are using spring.profiles.active
+	activeProfileFromEnvironmentVariable = "$System.env.SPRING_PROFILES_ACTIVE".contains(new StringBuffer("mongodb"))
 }
 
 group = 'online.pubudu'
@@ -39,7 +48,19 @@ repositories {
 	mavenCentral()
 }
 
-if (isMongoDB) {
+// Uncomment if you are using spring.profiles.active
+//if (activeProfile != null) {
+//	if (activeProfile.toString().contains(new StringBuffer("mongodb"))){
+//		mainClassName = mongoDBMainClassName
+//	} else {
+//		mainClassName = defaultMainClassName
+//	}
+//} else {
+//	mainClassName = defaultMainClassName
+//}
+
+// Comment if you are using spring.profiles.active
+if (activeProfileFromEnvironmentVariable) {
 	mainClassName = mongoDBMainClassName
 } else {
 	mainClassName = defaultMainClassName

@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: mongodb,apikey
+    active: h2,apikey
 
 security:
   # Spring Security Filter Order
