@@ -4,6 +4,13 @@ import online.pubudu.springstarter.integration.database.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * <p>
+ *      Employee Repository for {@link online.pubudu.springstarter.integration.database.entity.Employee}.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 }

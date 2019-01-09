@@ -13,7 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by pubudu on 01/02/19.
+ * <p>
+ *      Filter to handle Preflight Checks.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE + 2)

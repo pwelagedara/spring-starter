@@ -1,16 +1,20 @@
 package online.pubudu.springstarter.util;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *      String Literals.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public final class Literals {
 
     private Literals() {
     }
 
-    /*
-    * Used for Status Code 401 Unauthorized
-    * */
+    /**
+     * Used for Status Code 401 Unauthorized
+     */
     public static final String EXCEPTION_AUTHENTICATION_FAILED = "Authentication Failed";
 
     /*

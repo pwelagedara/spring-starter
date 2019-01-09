@@ -5,7 +5,11 @@ import io.swagger.annotations.ApiModelProperty;
 import static online.pubudu.springstarter.util.Literals.TOKEN_DTO_TOKEN_EXAMPLE;
 
 /**
- * Created by pubudu welagedara on 12/17/18.
+ * <p>
+ *      Token Domain Transfer Object for <b>/auth/login</b>. This is the Response.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
  */
 public class TokenDto {
 

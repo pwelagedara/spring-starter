@@ -20,9 +20,13 @@ import java.io.IOException;
 
 import static online.pubudu.springstarter.util.Literals.EXCEPTION_AUTHENTICATION_FAILED;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *      An Exception Handler to handle Exceptions in the Filters.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class GlobalFilterExceptionHandler extends OncePerRequestFilter {

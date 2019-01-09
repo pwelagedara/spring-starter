@@ -15,9 +15,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *     API Key Security configuration is here. This is activated by <b>apikey</b> Spring Profile.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @Configuration
 @Profile("apikey")
 @EnableWebSecurity(debug = true)

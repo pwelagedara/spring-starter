@@ -3,9 +3,13 @@ package online.pubudu.springstarter.security.apikey;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.authority.AuthorityUtils;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *      Custom Authentication Token
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class ApiKeyAuthenticationToken extends AbstractAuthenticationToken {
 
     private String apiKey;

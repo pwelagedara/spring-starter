@@ -17,7 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by pubudu welagedara on 12/17/18.
+ * <p>
+ *      Login Filter for <b>/auth/login</b>.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
  */
 public class JwtLoginFilter  extends AbstractAuthenticationProcessingFilter {
 

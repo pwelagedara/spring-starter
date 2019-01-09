@@ -10,9 +10,13 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import javax.servlet.http.HttpServletRequest;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *      The Controller Advice to handle Exceptions in the Controllers.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @ControllerAdvice
 public class GlobalControllerExceptionHandler extends ResponseEntityExceptionHandler {
 

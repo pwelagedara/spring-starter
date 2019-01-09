@@ -2,6 +2,13 @@ package online.pubudu.springstarter.integration.database.entity;
 
 import javax.persistence.*;
 
+/**
+ * <p>
+ *      Database Entity Manager which has a Super Class Sub Class Relationship with {@link online.pubudu.springstarter.integration.database.entity.Employee}.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @Entity
 public class Manager {
 

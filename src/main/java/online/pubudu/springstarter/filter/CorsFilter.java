@@ -12,7 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by pubudu on 01/02/19.
+ * <p>
+ *      CORS Filter.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE + 1)

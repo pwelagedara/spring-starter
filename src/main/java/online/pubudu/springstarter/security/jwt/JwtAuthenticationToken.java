@@ -6,9 +6,13 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *      Custom Authentication Token
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class JwtAuthenticationToken extends AbstractAuthenticationToken {
 
     private String subject;

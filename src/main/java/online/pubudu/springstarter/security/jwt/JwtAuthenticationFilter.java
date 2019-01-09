@@ -13,9 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *      Authentication Filter
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class JwtAuthenticationFilter extends GenericFilterBean {
 
     private AuthenticationManager authenticationManager;

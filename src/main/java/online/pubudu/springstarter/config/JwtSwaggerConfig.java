@@ -29,7 +29,14 @@ import java.util.List;
 import static com.google.common.collect.Lists.newArrayList;
 
 /**
- * Created by pubudu on 01/02/19.
+ * <p>
+ *     JWT Swagger configuration is here. This is activated by <b>jwt</b> Spring Profile.
+ * </p>
+ * <p>
+ *     <b>/auth/login</b> endpoint is used to authenticate the user initially. This endpoint is added to Swagger Documentation using {@link online.pubudu.springstarter.config.LoginOperation}.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
  */
 @Configuration
 @Profile("jwt")
@@ -39,7 +46,14 @@ public class JwtSwaggerConfig {
     @Autowired
     private TypeResolver typeResolver;
 
-    // https://springfox.github.io/springfox/docs/current/
+    /**
+     * <p>
+     *     <a href="https://springfox.github.io/springfox/docs/current/">Documentation</a>
+     * </p>
+     * @return Docket
+     * @author pubudu welagedara
+     * @see <a href="http://pubudu.online">pubudu.online</a>
+     */
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -83,7 +97,17 @@ public class JwtSwaggerConfig {
                 new SecurityReference("Authorization", authorizationScopes));
     }
 
-    // https://stackoverflow.com/questions/34386337/documenting-springs-login-logout-api-in-swagger
+    /**
+     * <p>
+     *      <a href="https://stackoverflow.com/questions/34386337/documenting-springs-login-logout-api-in-swagger">Tutorial on Exposing Login and Logout Endpoints</a>
+     * </p>
+     * @param apiDescriptionReader
+     * @param apiModelReader
+     * @param pluginsManager
+     * @return LoginOperation
+     * @author pubudu welagedara
+     * @see <a href="http://pubudu.online">pubudu.online</a>
+     */
     @Primary
     @Bean
     public ApiListingScanner addExtraOperations(ApiDescriptionReader apiDescriptionReader, ApiModelReader apiModelReader, DocumentationPluginsManager pluginsManager)

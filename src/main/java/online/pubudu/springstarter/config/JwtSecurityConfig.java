@@ -19,9 +19,16 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *     JWT configuration is here. This is activated by <b>jwt</b> Spring Profile.
+ * </p>
+ * <p>
+ *     <b>/auth/login</b> endpoint is used to authenticate the user initially.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @Configuration
 @Profile("jwt")
 @EnableWebSecurity(debug = true)
@@ -45,11 +52,18 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CustomAuthenticationEntrypoint customAuthenticationEntrypoint;
 
-    /*
-    * Protected endpoints need ADMIN Role to work
-    * If the Role is wrong a 403 Forbidden Response will be shown
-    * Remove ".antMatchers("/protected/**").hasRole("ADMIN")" to allow any Role in
-    * */
+    /**
+     * <p>
+     *      Protected endpoints need ADMIN Role to work. If the Role is wrong a 403 Forbidden Response will be shown.
+     * </p>
+     * <p>
+     *     Remove ".antMatchers("/protected/**").hasRole("ADMIN")" to allow any Role in
+     * </p>
+     * @param http
+     * @throws Exception
+     * @author pubudu welagedara
+     * @see <a href="http://pubudu.online">pubudu.online</a>
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 

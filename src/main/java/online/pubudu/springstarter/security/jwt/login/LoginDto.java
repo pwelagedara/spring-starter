@@ -6,7 +6,11 @@ import static online.pubudu.springstarter.util.Literals.LOGIN_DTO_PASSWORD_EXAMP
 import static online.pubudu.springstarter.util.Literals.LOGIN_DTO_USERNAME_EXAMPLE;
 
 /**
- * Created by pubudu welagedara on 12/17/18.
+ * <p>
+ *      Login Domain Transfer Object for <b>/auth/login</b>. This is the Request.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
  */
 public class LoginDto {
 

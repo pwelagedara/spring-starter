@@ -4,9 +4,13 @@ import io.swagger.annotations.ApiModelProperty;
 
 import static online.pubudu.springstarter.util.Literals.MESSAGE_DTO_MESSAGE_EXAMPLE;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *      Message Domain Transfer Object.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class MessageDto {
 
     @ApiModelProperty(value = "${message-dto.message.value}", required = true, example = MESSAGE_DTO_MESSAGE_EXAMPLE)

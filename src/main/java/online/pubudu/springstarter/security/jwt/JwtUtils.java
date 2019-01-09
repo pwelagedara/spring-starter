@@ -11,9 +11,13 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Function;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *      JWT Utilities Class
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @Component
 public class JwtUtils {
 

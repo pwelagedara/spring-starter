@@ -5,9 +5,13 @@ import org.springframework.security.core.AuthenticationException;
 
 import static online.pubudu.springstarter.util.Literals.EXCEPTION_AUTHENTICATION_FAILED;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ * <p>
+ *      Custom Exception for JWTs.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class JwtAuthenticationException extends AuthenticationException {
 
     // Status Code is usually 401

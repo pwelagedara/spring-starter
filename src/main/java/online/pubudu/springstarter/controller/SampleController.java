@@ -11,13 +11,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static online.pubudu.springstarter.util.Literals.*;
 
-/*
-* Created by pubudu welagedara on 12/17/18.
-* */
+/**
+ *<p>
+ *     This is a Sample Controller.
+ *</p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @RestController
 @Api(tags = SAMPLE_CONTROLLER_TAG, description = SAMPLE_CONTROLLER_DESCRIPTION)
 public class SampleController {
 
+    /**
+     * <p>
+     *     This is a public endpoint which can be accessed only by anyone.
+     * </p>
+     * @return a message
+     * @author pubudu welagedara
+     * @see <a href="http://pubudu.online">pubudu.online</a>
+     */
     @ApiOperation(value = "${sample-controller.tell-something.value}", notes = "${sample-controller.tell-something.notes}")
     @ApiResponses(value = {
             @ApiResponse(code = RESPONSE_OK_VALUE, message = RESPONSE_OK_MESSAGE, response = MessageDto.class)
@@ -28,6 +40,14 @@ public class SampleController {
         return new MessageDto("Subscribe to PewDiePie...!!!");
     }
 
+    /**
+     * <p>
+     *     This is a protected endpoint which can only be accessed by an authenticated/ authorized user.
+     * </p>
+     * @return a message
+     * @author pubudu welagedara
+     * @see <a href="http://pubudu.online">pubudu.online</a>
+     */
     @ApiOperation(value = "${sample-controller.tell-a-secret.value}", notes = "${sample-controller.tell-a-secret.notes}")
     @ApiResponses(value = {
             @ApiResponse(code = RESPONSE_OK_VALUE, message = RESPONSE_OK_MESSAGE, response = MessageDto.class),

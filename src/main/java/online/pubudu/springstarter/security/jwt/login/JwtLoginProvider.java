@@ -10,7 +10,11 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by pubudu welagedara on 12/17/18.
+ * <p>
+ *      Custom Authentication Provider for <b>/auth/login</b>.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
  */
 @Component
 public class JwtLoginProvider implements AuthenticationProvider {

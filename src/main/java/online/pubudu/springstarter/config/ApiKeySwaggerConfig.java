@@ -20,14 +20,28 @@ import java.util.List;
 import static com.google.common.collect.Lists.newArrayList;
 
 /**
- * Created by pubudu on 01/02/19.
+ * <p>
+ *     API Key Swagger configuration is here. This is activated by <b>apikey</b> Spring Profile.
+ * </p>
+ * <p>
+ *     Here Swagger Security Configurations are added to <b>/protected/*</b> endpoints golbally.
+ * </p>
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
  */
 @Configuration
 @Profile("apikey")
 @EnableSwagger2
 public class ApiKeySwaggerConfig {
 
-    // https://springfox.github.io/springfox/docs/current/
+    /**
+     * <p>
+     *     <a href="https://springfox.github.io/springfox/docs/current/">Documentation</a>
+     * </p>
+     * @return Docket
+     * @author pubudu welagedara
+     * @see <a href="http://pubudu.online">pubudu.online</a>
+     */
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
