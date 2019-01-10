@@ -37,7 +37,7 @@ public class ApiKeySwaggerConfig {
      * </p>
      * @return Docket
      * @author pubudu welagedara
-     * @see <a href="http://pubudu.online">pubudu.online</a>
+     * @see springfox.documentation.spring.web.plugins.Docket
      */
     @Bean
     public Docket api() {

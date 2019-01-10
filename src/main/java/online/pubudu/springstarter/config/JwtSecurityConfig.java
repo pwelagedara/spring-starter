@@ -59,7 +59,6 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
      * @param http
      * @throws Exception
      * @author pubudu welagedara
-     * @see <a href="http://pubudu.online">pubudu.online</a>
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {

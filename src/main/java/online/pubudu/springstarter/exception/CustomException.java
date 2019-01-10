@@ -12,7 +12,6 @@ public class CustomException extends Exception {
     /**
      * Status Code is usually 400
      * @author pubudu welagedara
-     * @see <a href="http://pubudu.online">pubudu.online</a>
      */
     private int statusCode = HttpStatus.BAD_REQUEST.value();
 

@@ -99,7 +99,7 @@ public class JwtSwaggerConfig {
      * @param pluginsManager
      * @return LoginOperation
      * @author pubudu welagedara
-     * @see <a href="http://pubudu.online">pubudu.online</a>
+     * @see LoginOperation
      */
     @Primary
     @Bean

@@ -24,7 +24,7 @@ public class SampleController {
      * This is a public endpoint which can be accessed only by anyone.
      * @return a message
      * @author pubudu welagedara
-     * @see <a href="http://pubudu.online">pubudu.online</a>
+     * @see online.pubudu.springstarter.dto.MessageDto
      */
     @ApiOperation(value = "${sample-controller.tell-something.value}", notes = "${sample-controller.tell-something.notes}")
     @ApiResponses(value = {
@@ -40,7 +40,7 @@ public class SampleController {
      * This is a protected endpoint which can only be accessed by an authenticated/ authorized user.
      * @return a message
      * @author pubudu welagedara
-     * @see <a href="http://pubudu.online">pubudu.online</a>
+     * @see online.pubudu.springstarter.dto.MessageDto
      */
     @ApiOperation(value = "${sample-controller.tell-a-secret.value}", notes = "${sample-controller.tell-a-secret.notes}")
     @ApiResponses(value = {

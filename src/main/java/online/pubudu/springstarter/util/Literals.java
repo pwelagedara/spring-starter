@@ -12,6 +12,7 @@ public final class Literals {
 
     /**
      * Used for Status Code 401 Unauthorized
+     * @author pubudu welagedara
      */
     public static final String EXCEPTION_AUTHENTICATION_FAILED = "Authentication Failed";
 
