@@ -6,9 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * <p>
- *      Tests
- * </p>
+ * Tests
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */
